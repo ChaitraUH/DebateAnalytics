@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/roughjs@latest/bundled/rough.js"></script>
+    <script src="../static/main.js"></script>
+    <script type="text/javascript" src="../static/protovis.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <link rel="stylesheet" href="../static/main.css">
+    <title>Online Debate Visual Analytics</title>
+</head>
+<body>
+   <header class = "header">
+        <h1>Online Debate Visual Analytics</h1>
+    </header>
+
+    <nav class = "candidates-list">
+        <h3>Candidates</h3>
+        <ul id="can-list">
+        </ul>
+    </nav>
+    <div class = "video-player">
+        <h3>Debate - streaming</h3>
+
+        <iframe width="480" height="315" id="video" class ="video" src={{ vid }}>
+        </iframe>
+
+    </div>
+    <div class = "tag">
+        <h3>Tag attacks here</h3>
+        <div>
+            <input type="text" id = "attacker" ondragover="allowDrop(event)" ondrop = "drop(event)"/> Attacks <input type="text"  id = "attackee" ondrop = "drop(event)"/>
+        </div>
+        <div>
+            <button id = "tagbutton" onclick = "tagging()">Tag</button>
+        </div>
+    </div>
+    <div class = "attack-display" id="attack-div">
+        <h3>Attack transition</h3>
+        <canvas id="canvas" width="800" height="700"></canvas>
+    </div>
+    <div class = "topic-display" id="topic-display-div">
+        <h3>Topic transition</h3>
+        <label for="topic_select">Select Topic:</label>
+        <select id="topic_select" onchange="select_topic()">
+          <option value="other">None</option>
+          <option value="foreign_policy">Foreign Policy</option>
+          <option value="gun_control">Gun Control</option>
+          <option value="taxes">Taxes</option>
+          <option value="healthcare">Healthcare</option>
+          <option value="economic_inequality">Economic Inequality</option>
+          <option value="education">Education</option>
+        </select>
+        <div id="chart-div"></div>
+
+        <script type="text/javascript+protovis">
+
+    function load_topic_vis(links) {
+        d3.select("svg").remove()
+      console.log("loading load_topic_vis");
+        nodes = [
+          {nodeName:"None", group:1},
+          {nodeName:"Foreign Policy", group:2},
+          {nodeName:"Gun Control", group:3},
+          {nodeName:"Taxes", group:4},
+          {nodeName:"Healthcare", group:5},
+          {nodeName:"Economic Inequality", group:6},
+          {nodeName:"Education", group:7},
+        ]
+    console.log("Nodes", nodes, "Links", links)
+
+      var div_height = $("#topic-display-div").height();
+      var div_width = $("#topic-display-div").width();
+      console.log("div_height",div_height,"div_width",div_width);
+      var t = Math.round( 0.1 * div_height );
+      var l = Math.round( 0.2 * div_width );
+      var vis = new pv.Panel()
+           .width(div_width - 2*l-50)
+          .height(div_height - 2*t-100)
+          .top(t+10)
+          .left(l+50)
+          .right(l)
+          .bottom(t+5).canvas('chart-div');
+
+      var layout = vis.add(pv.Layout.Arc)
+          .nodes(nodes)
+          .links(links)
+          .orient("radial");
+
+      layout.link.add(pv.Line);
+
+      layout.node.add(pv.Dot)
+                .size(function(d) d.linkDegree + 4)
+                .fillStyle(pv.Colors.category19().by(function(d) d.group))
+                .strokeStyle(function() this.fillStyle().darker());
+
+      layout.label.add(pv.Label);
+
+      vis.render();
+    }
+
+    </script>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script src="../static/index.js"></script>
+    <link rel="stylesheet" href="../static/main.css">
+    <title>Online Debate Visual Analytics</title>
+</head>
+<body>
+   <header class = "header">
+        <h1>Online Debate Visual Analytics</h1>
+    </header>
+   <div class = "all-candidates">
+       <h3>Select Candidates</h3>
+       <button id="Amy Klobuchar" value="../static/images/allcandidates/AmyKlobuchar.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/AmyKlobuchar.png" alt="icon"/>
+           <p>Amy Klobuchar</p>
+       </button>
+
+       <button id="Andrew Yang" value="../static/images/allcandidates/AndrewYang.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/AndrewYang.png" alt="icon"/>
+           <p>Andrew Yang</p>
+       </button>
+
+       <button id="Bernie Sanders" value="../static/images/allcandidates/BernieSanders.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/BernieSanders.png" alt="icon"/>
+           <p>Bernie Sanders</p>
+       </button>
+
+       <button id="Beto Orourke" value="../static/images/allcandidates/BetoOrourke.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/BetoOrourke.png" alt="icon"/>
+           <p>Beto Orourke</p>
+       </button>
+
+       <button id="Bill DeBlasio" value="../static/images/allcandidates/BillDeBlasio.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/BillDeBlasio.png" alt="icon"/>
+           <p>Bill DeBlasio</p>
+       </button>
+
+       <button id="Bill Weld" value="../static/images/allcandidates/BillWeld.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/BillWeld.png" alt="icon"/>
+           <p>Bill Weld</p>
+       </button>
+
+       <button id="Cory Booker" value="../static/images/allcandidates/CoryBooker.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/CoryBooker.png" alt="icon"/>
+           <p>Cory Booker</p>
+       </button>
+
+       <button id="Deval Patrick" value="../static/images/allcandidates/DevalPatrick.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/DevalPatrick.png" alt="icon"/>
+           <p>Deval Patrick</p>
+       </button>
+       <button id="Donald Trump" value="../static/images/allcandidates/DonaldTrump.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/DonaldTrump.png" alt="icon"/>
+           <p>Donald Trump</p>
+       </button>
+       <button id="Elizabeth Warren" value="../static/images/allcandidates/ElizabethWarren.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/ElizabethWarren.png" alt="icon"/>
+           <p>Elizabeth Warren</p>
+       </button>
+       <button id="Eric Swalwell" value="../static/images/allcandidates/EricSwalwell.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/EricSwalwell.png" alt="icon"/>
+           <p>Eric Swalwell</p>
+       </button>
+       <button id="Jay Inslee" value="../static/images/allcandidates/JayInslee.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/JayInslee.png" alt="icon"/>
+           <p>Jay Inslee</p>
+       </button>
+       <button id="Joe Biden" value="../static/images/allcandidates/JoeBiden.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/JoeBiden.png" alt="icon"/>
+           <p>Joe Biden</p>
+       </button>
+       <button id="Joe Sestak" value="../static/images/allcandidates/JoeSestak.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/JoeSestak.png" alt="icon"/>
+           <p>Joe Sestak</p>
+       </button>
+       <button id="Joe Walsh" value="../static/images/allcandidates/JoeWalsh.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/JoeWalsh.png" alt="icon"/>
+           <p>Joe Walsh</p>
+       </button>
+       <button id="John Delaney" value="../static/images/allcandidates/JohnDelaney.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/JohnDelaney.png" alt="icon"/>
+           <p>John Delaney</p>
+       </button>
+       <button id="John Hickenlooper" value="../static/images/allcandidates/JohnHickenlooper.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/JohnHickenlooper.png" alt="icon"/>
+           <p>John Hickenlooper</p>
+       </button>
+       <button id="Julian Castro" value="../static/images/allcandidates/JulianCastro.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/JulianCastro.png" alt="icon"/>
+           <p>Julian Castro</p>
+       </button>
+       <button id="Kamala Harris" value="../static/images/allcandidates/KamalaHarris.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/KamalaHarris.png" alt="icon"/>
+           <p>Kamala Harris</p>
+       </button>
+       <button id="Kristen Gillibrand" value="../static/images/allcandidates/KirstenGillibrand.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/KirstenGillibrand.png" alt="icon"/>
+           <p>Kristen Gillibrand</p>
+       </button>
+       <button id="Mark Sanford" value="../static/images/allcandidates/MarkSanford.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/MarkSanford.png" alt="icon"/>
+           <p>Mark Sanford</p>
+       </button>
+       <button id="Merianne Williomson" value="../static/images/allcandidates/MerianneWilliomson.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/MerianneWilliomson.png" alt="icon"/>
+           <p>Merianne Williomson</p>
+       </button>
+       <button id="Mike Bloomberg" value="../static/images/allcandidates/MikeBloomberg.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/MikeBloomberg.png" alt="icon"/>
+           <p>Mike Bloomberg</p>
+       </button>
+       <button id="Pete Buttigieg" value="../static/images/allcandidates/PeteButtigieg.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/PeteButtigieg.png" alt="icon"/>
+           <p>Pete Buttigieg</p>
+       </button>
+       <button id="Rechard Ojeda" value="../static/images/allcandidates/RechardOjeda.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/RechardOjeda.png" alt="icon"/>
+           <p>Rechard Ojeda</p>
+       </button>
+       <button id="Seth Moulton" value="../static/images/allcandidates/SethMoulton.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/SethMoulton.png" alt="icon"/>
+           <p>Seth Moulton</p>
+       </button>
+       <button id="Steve Bullock" value="../static/images/allcandidates/SteveBullock.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/SteveBullock.png" alt="icon"/>
+           <p>Steve Bullock</p>
+       </button>
+       <button id="Tim Ryan" value="../static/images/allcandidates/TimRyan.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/TimRyan.png" alt="icon"/>
+           <p>Tim Ryan</p>
+       </button>
+       <button id="Tom Steyer" value="../static/images/allcandidates/TomSteyer.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/TomSteyer.png" alt="icon"/>
+           <p>Tom Steyer</p>
+       </button>
+       <button id="Tulsi Gabbard" value="../static/images/allcandidates/TulsiGabbard.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/TulsiGabbard.png" alt="icon"/>
+           <p>Tulsi Gabbard</p>
+       </button>
+       <button id="Wayne Messam" value="../static/images/allcandidates/WayneMessam.png" onclick="setvalue(this)">
+           <img src="../static/images/allcandidates/WayneMessam.png" alt="icon"/>
+           <p>Wayne Messam</p>
+       </button>
+       <form action = "/load-next" method="post">
+        <textarea style="display:none;" id = "text-area" name="text-area"></textarea>
+
+        <div class = "video-uri">
+            <label>Video link: </label>
+             <input type="text" name="inp"/>
+        </div>
+        <div class="submit-button">
+             <input type="submit"/>
+        </div>
+       </form>
+   </div>
+
+</body>
+</html>
